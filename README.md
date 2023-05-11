@@ -58,17 +58,25 @@ To run this project, you will need to add the following environment variables to
 
 `LOGGING LVL` - python logging package levels
 
+`DJ_DJ_CSRF_TRUSTED_ORIGINS` - domain list for CSRF validation
+
 `DJ_SU_NAME` - default superuser name
 `DJ_SU_EMAIL` - default superuser email
 `DJ_SU_PASSWORD` - default superuser password
 
-also variables to your ./envs/postgres.env file
+variables to your ./envs/postgres.env file
 
 `POSTGRES_USER` - postgres root user\
 `POSTGRES_PASSWORD` - postgres root password\
 `POSTGRES_DB` - database name\
 `POSTGRES_HOST` - database host (need to add docker service name)\
 `POSTGRES_PORT` - database ports\
+
+also variables for ./envs/redis.env file
+
+`REDIS_HOST` - running redis server host
+`REDIS_PORT` - running server redis port
+
 ## Running Tests
 
 To run tests, run the following command
