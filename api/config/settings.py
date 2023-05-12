@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from .swagger_settings import SPECTACULAR_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,7 @@ DEBUG = int(os.environ.get("DJ_DEBUG", 0))
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
     "localhost",
-    "http://127.0.0.1",
+    "127.0.0.1",
     "floating-castle-45657.herokuapp.com",
     "https://floating-castle-45657.herokuapp.com/",
 ]
@@ -141,11 +142,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-}
-
-SPECTACULAR_SETTINGS = {
-    "TITLE": "URL Shortener API",
-    "DESCRIPTION": "Best shortener for your URLs",
-    "VERSION": "1.0.0",
-    "SERVE_INCLUDE_SCHEMA": False,
 }
