@@ -30,12 +30,12 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
     "localhost",
     "http://127.0.0.1",
-    "stormy-river-22960.herokuapp.com",
-    "https://stormy-river-22960.herokuapp.com/",
+    "floating-castle-45657.herokuapp.com",
+    "https://floating-castle-45657.herokuapp.com/",
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
 
-CSRF_TRUSTED_ORIGINS = ("https://stormy-river-22960.herokuapp.com",)
+CSRF_TRUSTED_ORIGINS = ("https://floating-castle-45657.herokuapp.com",)
 
 # Application definition
 
