@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: URL Shortener API
+  version: 1.0.0
+  description: "A Django URL shortener app is a web application that generates short,\
+    \ customized links that \n                    redirect to longer URLs. It uses\
+    \ Django and a database to store original and short URLs, and may \n         \
+    \           incorporate third-party services for URL shortening. The app is useful\
+    \ for simplifying the sharing \n                    of links online."
+paths:
+  /api/v1/urls/:
+    post:
+      operationId: v1_urls_create
+      description: |-
+        create:
+        Creates a short URL from the provided original URL.
+
+        Expects JSON data in the format:
+        {
+            "url": "http://example.com"
+        }
+
+        Where "url" is the original URL that is to be shortened.
+
+        The response contains the original URL and the shortened URL:
+        {
+            "url": "http://example.com",
+            "short_url": "https://floating-castle-45657.herokuapp.com/abcde/"
+        }
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OriginalURLSErializer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OriginalURLSErializer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OriginalURLSErializer'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OriginalURLSErializer'
+          description: ''
+components:
+  schemas:
+    OriginalURLSErializer:
+      type: object
+      properties:
+        url:
+          type: string
+          maxLength: 2000
+      required:
+      - url
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

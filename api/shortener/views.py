@@ -1,4 +1,3 @@
-from django.core.cache import cache
 from django.views.generic import RedirectView
 from rest_framework import generics, status
 from rest_framework.generics import get_object_or_404
@@ -9,27 +8,28 @@ from . import serializers
 
 
 class CreateShortURLApiView(generics.CreateAPIView):
+    """
+    create:
+    Creates a short URL from the provided original URL.
+
+    Expects JSON data in the format:
+    {
+        "url": "http://example.com"
+    }
+
+    Where "url" is the original URL that is to be shortened.
+
+    The response contains the original URL and the shortened URL:
+    {
+        "url": "http://example.com",
+        "short_url": "https://floating-castle-45657.herokuapp.com/abcde/"
+    }
+    """
+
     serializer_class = serializers.OriginalURLSErializer
     queryset = models.URL.objects.all()
 
     def create(self, request, *args, **kwargs):
-        """
-        create:
-        Creates a short URL from the provided original URL.
-
-        Expects JSON data in the format:
-        {
-            "url": "http://example.com"
-        }
-
-        Where "url" is the original URL that is to be shortened.
-
-        The response contains the original URL and the shortened URL:
-        {
-            "url": "http://example.com",
-            "short_url": "https://floating-wave-47691.herokuapp.com/abcd/"
-        }
-        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         url = serializer.save()
@@ -44,7 +44,7 @@ class ShortUrlRedirectView(RedirectView):
     Redirects the user to the original URL from the provided short URL.
 
     Expects the short URL to be part of the path, like:
-    https://floating-wave-47691.herokuapp.com/abcde/
+    https://floating-castle-45657.herokuapp.com/abcde/
 
     Where "abcd" is the short URL.
 
