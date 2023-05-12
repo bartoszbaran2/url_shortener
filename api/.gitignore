@@ -1,6 +1,5 @@
 .idea
 **/*.pyc
-db.sqlite3
 
 .mypy_cache
 .pytest_cache
