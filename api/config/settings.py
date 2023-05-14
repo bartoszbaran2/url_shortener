@@ -29,8 +29,6 @@ DEBUG = int(os.environ.get("DJ_DEBUG", 0))
 
 ALLOWED_HOSTS = os.environ.get("DJ_ALLOWED_HOSTS", "").split()
 
-CSRF_TRUSTED_ORIGINS = ("https://floating-castle-45657.herokuapp.com",)
-
 # Application definition
 
 INSTALLED_APPS = [

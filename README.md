@@ -1,9 +1,12 @@
 [![Sphinx](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 ![Pytest-cov](https://img.shields.io/badge/coverage-100%25-green)
 [![Beerware License](https://img.shields.io/badge/license-Beerware-yellow)](https://github.com/bartoszbaran2/url_shortener/blob/master/LICENSE)
+
 # URL Shortener
 
-A Django URL shortener app is a web application that generates short, customized links that redirect to longer URLs. It uses Django and a database to store original and short URLs, and may incorporate third-party services for URL shortening. The app is useful for simplifying the sharing of links online.
+A Django URL shortener app is a web application that generates short, customized links that redirect to longer URLs. It
+uses Django and a database to store original and short URLs, and may incorporate third-party services for URL
+shortening. The app is useful for simplifying the sharing of links online.
 
 ## Demo
 
@@ -12,7 +15,6 @@ A Django URL shortener app is a web application that generates short, customized
 ## Tech Stack
 
 **Server:** Python, Django, Django RestFramework, Docker, Pytest, Postgres
-
 
 ## Run Locally
 
@@ -47,6 +49,9 @@ Go to your client and type:
 ```bash
     http://0.0.0.0:8000/swagger-ui/
 ```
+
+You can use Postman with predifined postman collections:
+- load postman collections from `./api/postman_collections/*.postman_collection.json`
 
 ## Environment Variables
 
@@ -85,17 +90,15 @@ To run tests, run the following command
   docker compose exec api pytest
 ```
 
-
 ## Coverage report
 
 ![Coverage report](https://raw.githubusercontent.com/bartoszbaran2/url_shortener/master/screenshots/coverage.png)
-
 
 ## Author
 
 - [@bartoszbaran2](https://github.com/bartoszbaran2)
 
-
 ## 🔗 Links
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/bartoszbaran2?tab=repositories)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bartosz-baran-9484a7235/)
