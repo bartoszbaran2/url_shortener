@@ -30,10 +30,11 @@ DEBUG = int(os.environ.get("DJ_DEBUG", 0))
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
-    "localhost",
     '127.0.0.1',
     "https://127.0.0.1",
     "rocky-river-26634.herokuapp.com",
+    "rocky-river-26634-5a8e8a67d318.herokuapp.com/",
+    "https://rocky-river-26634-5a8e8a67d318.herokuapp.com/",
     "https://rocky-river-26634.herokuapp.com"
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
