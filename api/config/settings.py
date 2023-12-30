@@ -143,4 +143,4 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 INTERNAL_IPS = ALLOWED_HOSTS
 
-CSRF_TRUSTED_ORIGINS = ("https://floating-castle-45657.herokuapp.com",)
+CSRF_TRUSTED_ORIGINS = ("https://rocky-river-26634-5a8e8a67d318.herokuapp.com/", )
