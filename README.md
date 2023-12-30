@@ -10,7 +10,7 @@ shortening. The app is useful for simplifying the sharing of links online.
 
 ## Demo
 
-[URL Shortener Heroku](https://floating-castle-45657.herokuapp.com/api/schema/swagger-ui/)
+[URL Shortener Heroku](https://rocky-river-26634-5a8e8a67d318.herokuapp.com/api/schema/swagger-ui/)
 
 ## Tech Stack
 
