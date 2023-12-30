@@ -22,14 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "secret"
+SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DJ_DEBUG", 0))
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 ALLOWED_HOSTS = [
+    "localhost",
+    "https://127.0.0.1",
     "floating-castle-45657.herokuapp.com",
+    "https://floating-castle-45657.herokuapp.com"
 ]
 INTERNAL_IPS = ALLOWED_HOSTS
 
